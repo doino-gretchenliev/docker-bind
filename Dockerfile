@@ -14,7 +14,8 @@ LABEL maintainer="Doino Gretchenliev"
 ENV BIND_USER=bind \
     BIND_VERSION=9.11.3 \
     WEBMIN_VERSION=1.9 \
-    DATA_DIR=/data
+    DATA_DIR=/data \
+    BIND_LISTEN_PORT=53
 
 COPY --from=add-apt-repositories /etc/apt/trusted.gpg /etc/apt/trusted.gpg
 COPY --from=add-apt-repositories /etc/apt/sources.list /etc/apt/sources.list
@@ -41,7 +42,7 @@ COPY entrypoint.sh /sbin/entrypoint.sh
 
 RUN chmod 755 /sbin/entrypoint.sh
 
-EXPOSE 53/udp 53/tcp 10000/tcp
+EXPOSE ${BIND_LISTEN_PORT}/udp ${BIND_LISTEN_PORT}/tcp 10000/tcp
 
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 
