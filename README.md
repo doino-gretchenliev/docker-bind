@@ -1,6 +1,6 @@
 [![Circle CI](https://circleci.com/gh/sameersbn/docker-bind.svg?style=shield)](https://circleci.com/gh/sameersbn/docker-bind) [![Docker Repository on Quay.io](https://quay.io/repository/sameersbn/bind/status "Docker Repository on Quay.io")](https://quay.io/repository/sameersbn/bind)
 
-# sameersbn/bind:9.11.3-20190113
+# gretch/bind:9.11.3-20190113
 
 - [Introduction](#introduction)
   - [Contributing](#contributing)
