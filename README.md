@@ -1,5 +1,3 @@
-[![Circle CI](https://circleci.com/gh/sameersbn/docker-bind.svg?style=shield)](https://circleci.com/gh/sameersbn/docker-bind) [![Docker Repository on Quay.io](https://quay.io/repository/sameersbn/bind/status "Docker Repository on Quay.io")](https://quay.io/repository/sameersbn/bind)
-
 # gretch/bind:9.11.3-20190113
 
 - [Introduction](#introduction)
@@ -25,8 +23,7 @@ BIND is open source software that implements the Domain Name System (DNS) protoc
 If you find this image useful here's how you can help:
 
 - Send a pull request with your awesome features and bug fixes
-- Help users resolve their [issues](../../issues?q=is%3Aopen+is%3Aissue).
-- Support the development of this image with a [donation](http://www.damagehead.com/donate/)
+- Help users resolve their [issues](https://github.com/doino-gretchenliev/docker-bind/issues).
 
 ## Issues
 
@@ -34,7 +31,7 @@ Before reporting your issue please try updating Docker to the latest version and
 
 SELinux users should try disabling SELinux using the command `setenforce 0` to see if it resolves the issue.
 
-If the above recommendations do not help then [report your issue](../../issues/new) along with the following information:
+If the above recommendations do not help then [report your issue](https://github.com/doino-gretchenliev/docker-bind/issues/new) along with the following information:
 
 - Output of the `docker version` and `docker info` commands
 - The `docker run` command or `docker-compose.yml` used to start the image. Mask out the sensitive bits.
@@ -44,9 +41,7 @@ If the above recommendations do not help then [report your issue](../../issues/n
 
 ## Installation
 
-Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/sameersbn/bind) and is the recommended method of installation.
-
-> **Note**: Builds are also available on [Quay.io](https://quay.io/repository/sameersbn/bind)
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/gretch/bind) and is the recommended method of installation.
 
 ```bash
 docker pull sameersbn/bind:9.11.3-20190113
