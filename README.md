@@ -1,4 +1,4 @@
-# gretch/bind:9.11.3-20190113
+# gretch/bind
 
 - [Introduction](#introduction)
   - [Contributing](#contributing)
@@ -44,13 +44,13 @@ If the above recommendations do not help then [report your issue](https://github
 Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/gretch/bind) and is the recommended method of installation.
 
 ```bash
-docker pull sameersbn/bind:9.11.3-20190706
+docker pull gretch/bind
 ```
 
 Alternatively you can build the image yourself.
 
 ```bash
-docker build -t sameersbn/bind github.com/sameersbn/docker-bind
+docker build -t gretch/bind github.com/doino-gretchenliev/docker-bind
 ```
 
 ## Quickstart
@@ -61,7 +61,7 @@ Start BIND using:
 docker run --name bind -d --restart=always \
   --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp \
   --volume /srv/docker/bind:/data \
-  sameersbn/bind:9.11.3-20190706
+  gretch/bind
 ```
 
 _Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)_
@@ -80,7 +80,7 @@ You can customize the launch command of BIND server by specifying arguments to `
 docker run --name bind -it --rm \
   --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp \
   --volume /srv/docker/bind:/data \
-  sameersbn/bind:9.11.3-20190706 -h
+  gretch/bind -h
 ```
 
 ## Persistence
@@ -105,7 +105,7 @@ To upgrade to newer releases:
 1. Download the updated Docker image:
 
 ```bash
-docker pull sameersbn/bind:9.11.3-20190706
+docker pull gretch/bind
 ```
 
 2. Stop the currently running image:
@@ -125,7 +125,7 @@ docker rm -v bind
 ```bash
 docker run -name bind -d \
   [OPTIONS] \
-  sameersbn/bind:9.11.3-20190706
+  gretch/bind
 ```
 
 ## Shell Access
