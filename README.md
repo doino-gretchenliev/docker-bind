@@ -44,7 +44,7 @@ If the above recommendations do not help then [report your issue](https://github
 Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/gretch/bind) and is the recommended method of installation.
 
 ```bash
-docker pull sameersbn/bind:9.11.3-20190113
+docker pull sameersbn/bind:9.11.3-20190706
 ```
 
 Alternatively you can build the image yourself.
@@ -61,10 +61,10 @@ Start BIND using:
 docker run --name bind -d --restart=always \
   --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp \
   --volume /srv/docker/bind:/data \
-  sameersbn/bind:9.11.3-20190113
+  sameersbn/bind:9.11.3-20190706
 ```
 
-*Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)*
+_Alternatively, you can use the sample [docker-compose.yml](docker-compose.yml) file to start the container using [Docker Compose](https://docs.docker.com/compose/)_
 
 When the container is started the [Webmin](http://www.webmin.com/) service is also started and is accessible from the web browser at https://localhost:10000. Login to Webmin with the username `root` and password `password`. Specify `--env ROOT_PASSWORD=secretpassword` on the `docker run` command to set a password of your choosing.
 
@@ -80,14 +80,14 @@ You can customize the launch command of BIND server by specifying arguments to `
 docker run --name bind -it --rm \
   --publish 53:53/tcp --publish 53:53/udp --publish 10000:10000/tcp \
   --volume /srv/docker/bind:/data \
-  sameersbn/bind:9.11.3-20190113 -h
+  sameersbn/bind:9.11.3-20190706 -h
 ```
 
 ## Persistence
 
 For the BIND to preserve its state across container shutdown and startup you should mount a volume at `/data`.
 
-> *The [Quickstart](#quickstart) command already mounts a volume for persistence.*
+> _The [Quickstart](#quickstart) command already mounts a volume for persistence._
 
 SELinux users should update the security context of the host mountpoint so that it plays nicely with Docker:
 
@@ -102,31 +102,31 @@ chcon -Rt svirt_sandbox_file_t /srv/docker/bind
 
 To upgrade to newer releases:
 
-  1. Download the updated Docker image:
+1. Download the updated Docker image:
 
-  ```bash
-  docker pull sameersbn/bind:9.11.3-20190113
-  ```
+```bash
+docker pull sameersbn/bind:9.11.3-20190706
+```
 
-  2. Stop the currently running image:
+2. Stop the currently running image:
 
-  ```bash
-  docker stop bind
-  ```
+```bash
+docker stop bind
+```
 
-  3. Remove the stopped container
+3. Remove the stopped container
 
-  ```bash
-  docker rm -v bind
-  ```
+```bash
+docker rm -v bind
+```
 
-  4. Start the updated image
+4. Start the updated image
 
-  ```bash
-  docker run -name bind -d \
-    [OPTIONS] \
-    sameersbn/bind:9.11.3-20190113
-  ```
+```bash
+docker run -name bind -d \
+  [OPTIONS] \
+  sameersbn/bind:9.11.3-20190706
+```
 
 ## Shell Access
 
